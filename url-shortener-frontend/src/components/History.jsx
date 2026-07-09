@@ -35,34 +35,20 @@ function History({ urls, fetchUrls }) {
             <h3>{item.originalUrl}</h3>
 
             <p>
-              http://localhost:5000/{item.shortCode}
+              https://url-shortener-api-jhd4.onrender.com/{item.shortCode}
             </p>
 
             <span>👆 Clicks : {item.clicks}</span>
 
-            <div className="btn-group">
-  <button
-    className="copy-btn"
-    onClick={() => {
-      navigator.clipboard.writeText(
-        `http://localhost:5000/${item.shortCode}`
-      );
-      toast.success("Copied!");
-    }}
-  >
-    📋 Copy
-  </button>
-
-  <button
-    className="delete-btn"
-    onClick={() => {
-      setSelectedId(item._id);
-      setShowModal(true);
-    }}
-  >
-    🗑 Delete
-  </button>
-</div>
+            <button
+              className="delete-btn"
+              onClick={() => {
+                setSelectedId(item._id);
+                setShowModal(true);
+              }}
+            >
+              🗑 Delete
+            </button>
           </div>
         ))
       )}

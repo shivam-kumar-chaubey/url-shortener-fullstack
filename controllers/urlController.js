@@ -28,7 +28,7 @@ const createShortUrl = async (req, res) => {
     if (existingUrl) {
       return res.status(200).json({
         message: "URL Already Exists",
-        shortUrl: `http://localhost:5000/${existingUrl.shortCode}`,
+        shortUrl: `/${existingUrl.shortCode}`,
       });
     }
 
@@ -44,7 +44,7 @@ const createShortUrl = async (req, res) => {
 
     res.status(201).json({
       message: "Short URL Shortened Successfully",
-      shortUrl: `http://localhost:5000/${shortCode}`,
+      shortUrl: `https://url-shortener-api-jhd4.onrender.com/${shortCode}`,
     });
 
   } catch (error) {
